@@ -31,5 +31,8 @@ class EmailValidator : TextWatcher {
                     "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" +
                     ")+"
         )
+        fun isValidEmail(email: CharSequence?): Boolean {
+            return email != null && EMAIL_PATTERN.matcher(email).matches()
+        }
     }
 }
